@@ -1,0 +1,48 @@
+:root {
+    --st-tabs-color: light-dark(red, oklch(0.64 0.24 31.85));
+    --st-tab-font: system-ui;
+    --st-max-tabs: 10;
+
+    color-scheme: light dark;
+    font-family: system-ui;
+    text-wrap: pretty;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    color: light-dark(red, oklch(0.64 0.24 31.85));
+    text-decoration: none;
+    font-weight: bold;
+    opacity: .9;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+main {
+    max-width: min(100%, 60ch);
+    margin-inline: auto;
+    padding-inline: 1.5lh;
+}
+
+h1 {
+    font-weight: normal;
+
+    strong {
+        font-family: Georgia;
+    }
+}
+
+h1 + p {
+    font-family: Georgia;
+    font-size: 1.2em;
+}
+
+simple-tabs {
+    outline: 1px dashed var(--st-tabs-color);
+    outline-offset: .33lh;
+}
