@@ -2,7 +2,7 @@
 
 Keyboard accessible **Tabs** Web Component that changes to an **Accordion** in small spaces.
 
-![Preview of 3 horizontal tabs with the first one being active and showing 2 paragraphs of dummy text as content below. A subtle horizontal line separates the tabs from the contents of the active tab. The segment of the line below the active tab is in a brighter color.](./demo/preview.png)
+![Preview of 3 horizontal tabs with the first one being active and showing 2 paragraphs of dummy text as content below. A subtle horizontal line separates the tabs from the contents of the active tab. The segment of the line below the active tab is in a brighter color.](./dist/preview.png)
 
 JavaScript is used to enable View Transitions that animate the the page when the active tab is changed.
 
