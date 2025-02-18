@@ -97,6 +97,8 @@ You can override the default values for certain properties from your global CSS.
 - **Declarative Shadow DOM** to isolate the tab styles.
 
 ### 6.2. Features:
-- Keyboard accessible: the <kbd>←</kbd> and <kbd>→</kbd> arrow keys can be used after keyboard-navigating into the tabs.
-- JS is only used for the element transitions.
-- The Declarative Shadow DOM (particularly the isolated CSS inside) works without JS.
+<ul>
+    <li>Keyboard accessible: the <kbd>←</kbd> and <kbd>→</kbd> keys (as well as <kbd>↑</kbd>/<kbd>↓</kbd>) can be used after keyboard-navigating into the tabs.</li>
+    <li>JavaScript is only used to add the <code>view-transition-name</code>'s that enable the View Transitions.</li>
+    <li>The Declarative Shadow DOM, particularly <b>the isolated CSS inside the component's <code>&lt;template&gt;</code>, works without JavaScript</b>.</li>
+</ul>
