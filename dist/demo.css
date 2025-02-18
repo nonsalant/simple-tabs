@@ -39,8 +39,16 @@ h1 {
     }
 }
 
-kbd {
-    background: #88888820;
+code {
+    background-color: #aaaaaa40;
+    padding: .1lh .25lh;
+    border-radius: 4px;
+    display: inline-block;
+    translate: 0 -.05lh;
+}
+
+kbd:not(:has(kbd)) {
+    background-color: #aaaaaa40;
     border: solid 1px hsl(from currentColor h s l / .5);
     border-radius: 4px;
     padding: 0 .5lh;
