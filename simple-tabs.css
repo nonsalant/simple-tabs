@@ -168,7 +168,7 @@
 	white-space: nowrap;
 
 	@supports (view-transition-name: none) {
-		/* display: none; /* this breaks the transition animation */
+		display: none; /* this breaks the transition animation */
 		/* ( ...which is okay because the classic transitions
 		are replaced by view-transitions when supported) */
 	}
