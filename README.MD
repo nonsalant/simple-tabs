@@ -1,9 +1,14 @@
 # Simple Tabs
 
-Tabs that change into an Accordion in small spaces.
+Keyboard accessible **Tabs** Web Component that changes to an **Accordion** in small spaces.
+
+![Preview of 3 horizontal tabs with the first one being active and showing 2 paragraphs of dummy text as content below. A subtle horizontal line separates the tabs from the contents of the active tab. The segment of the line below the active tab is in a brighter color.](./demo/preview.png)
+
+JavaScript is used to enable View Transitions that animate the the page when the active tab is changed.
 
 ## 1. Demo
-**[CodePen Demo](https://codepen.io/nonsalant/pen/JojYLGQ)**
+- **[View `📁dist/` folder on Netlify](https://simple-tabs-web-component.netlify.app/)**
+- **[CodePen Demo](https://codepen.io/nonsalant/pen/JojYLGQ)**
 
 ## 2. Scripts and Styles
 
@@ -12,7 +17,7 @@ Tabs that change into an Accordion in small spaces.
 ```html
 <script src="./simple-tabs.js"></script>
 ```
-Or use the module version:
+- *Or* load it as a module:
 ```html
 <script src="./simple-tabs.js" type="module"></script>
 ```
@@ -22,7 +27,7 @@ Or use the module version:
 ```html
 <simple-tabs>
     <template shadowrootmode="open">
-        <!-- Scoped Stylesheet -->
+        <!-- Scoped Style Sheet -->
         <link rel="stylesheet" href="./simple-tabs.css">
         <!-- ... -->
     </template>
@@ -73,13 +78,25 @@ Or use the module version:
 ```
 
 ## 5. Style Overriding
-You can override the default styles by adding your own. E.g:
+You can override the default values for certain properties from your global CSS. E.g:
 
 ```css
 :root {
-    --st-tabs-color: light-dark(red, hotpink);
+    --st-tabs-color: red;
     --st-tab-font: system-ui;
     --st-max-tabs: 10;
 }
 
 ```
+
+## 6. Notes
+
+### 6.1. Uses:
+- **Container Queries** to change between tabs and accordion at 600px.
+- **View Transitions** to animate elements that follow the tabs in the DOM.
+- **Declarative Shadow DOM** to isolate the tab styles.
+
+### 6.2. Features:
+- Keyboard accessible: the <kbd>←</kbd> and <kbd>→</kbd> arrow keys can be used after keyboard-navigating into the tabs.
+- JS is only used for the element transitions.
+- The Declarative Shadow DOM (particularly the isolated CSS inside) works without JS.
