@@ -1,5 +1,5 @@
 :root {
-    --st-tabs-color: light-dark(red, oklch(0.64 0.24 31.85));
+    --st-color: red;
     --st-tab-font: system-ui;
     --st-max-tabs: 10;
 
@@ -13,7 +13,10 @@ body {
 }
 
 a {
-    color: light-dark(red, oklch(0.64 0.24 31.85));
+    color: light-dark(
+        oklch(from var(--st-color) 50% c h),
+        oklch(from var(--st-color) 85% 75% h)
+    );
     text-decoration: none;
     font-weight: bold;
     opacity: .9;

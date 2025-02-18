@@ -1,12 +1,18 @@
 /* Scoped Style Sheet */
 
 :host {
-	--_color: var(--st-tabs-color, #b78f1f);
+	--_color: var(--st-color, #b78f1f);
 	--_tab-font: var(--st-tab-font, system-ui);
 	--_max-tabs: var(--st-max-tabs, 10);
 
-	--_color-primary: oklch(from var(--_color) 50% c h);
-	--_color-muted: oklch(from var(--_color) 90% 10% h);
+	--_color-primary: light-dark(
+		oklch(from var(--_color) 50% c h),
+		oklch(from var(--_color) 85% 75% h)
+	);
+	--_color-muted: light-dark(
+		oklch(from var(--_color) 95% 10% h),
+		oklch(from var(--_color) 40% 20% h)
+	);
 
 	container: tabs / inline-size;
 	display: block;
