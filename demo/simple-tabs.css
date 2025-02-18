@@ -1,7 +1,7 @@
 /* Scoped Style Sheet */
 
 :host {
-	--_color: var(--st-color, #b78f1f);
+	--_color: var(--st-color, blue);
 	--_tab-font: var(--st-tab-font, system-ui);
 	--_max-tabs: var(--st-max-tabs, 10);
 
@@ -10,230 +10,229 @@
 		oklch(from var(--_color) 85% 75% h)
 	);
 	--_color-muted: light-dark(
-		oklch(from var(--_color) 95% 10% h),
+		oklch(from var(--_color) 90% 10% h),
 		oklch(from var(--_color) 40% 20% h)
 	);
 
 	container: tabs / inline-size;
 	display: block;
-	
-	&, *, *:before, *:after { box-sizing: border-box; }
+}
 
-	.simple-tabs {
-		/* tab grid */
-		display: grid;
-		gap: 0;
-		align-content: start;
-		grid-template-columns: repeat(var(--_max-tabs), auto) 1fr;
-		grid-template-rows: auto auto;
+*, *:before, *:after { box-sizing: border-box; }
 
-		/* Stack (into an accordion) on small */
-		@container tabs (width<=600px) {
-			grid-template-columns: unset;
-			grid-template-rows: repeat(auto-fill, auto);
+.simple-tabs {
+	/* tab grid */
+	display: grid;
+	gap: 0;
+	align-content: start;
+	grid-template-columns: repeat(var(--_max-tabs), auto) 1fr;
+	grid-template-rows: auto auto;
 
-			[role=tab] {
-				grid-row: unset;
-				width: 100%;
-				padding-inline: 0;
-				/* box-shadow: none; */
-				/* font-weight: normal; */
-				/* &:has(:checked) { font-weight: bold; } */
-				/* down-pointing chevron ▾ ▿*/
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				flex-wrap: nowrap;
-				&::after {
-					color: inherit;
-					width: 1rem;
-					height: 1rem;
-					display: inline-grid;
-					place-content: center;
-					/* outline: solid 1px red; */
-					float: right;
-					content: "▾";
-				}
-				&:has(:checked)::after {
-					/* content: "▿"; */
-					/* content: "▾"; */
-					/* content: ""; */
-					color: var(--_color-primary);
-				}
-			}
+	/* Stack (into an accordion) on small */
+	@container tabs (width<=600px) {
+		grid-template-columns: unset;
+		grid-template-rows: repeat(auto-fill, auto);
 
-			[role=tab]:has(:checked) {
-				/*padding-top: 1rem;*/
-				margin-bottom: -1.5rem;
-				/* box-shadow: 0 2px 0 transparent; */
-				box-shadow: none;
-				box-shadow: 0 3px 0 var(--_color-primary);
-				border: 0;
-				/* color: var(--_color-primary); */
-			}
-			
-			[role=tab]:has(:focus-visible) {
-				outline-offset: -1px;
-				padding-inline: 0.5rem;
-				/* margin-block-start: -.5rem; */
-				background-color: #fff;
-				/* box-shadow: none; */
-				border-color: transparent;
+		[role=tab] {
+			grid-row: unset;
+			width: 100%;
+			padding-inline: 0;
+			/* box-shadow: none; */
+			/* font-weight: normal; */
+			/* &:has(:checked) { font-weight: bold; } */
+			/* down-pointing chevron ▾ ▿*/
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: nowrap;
+			&::after {
 				color: inherit;
+				width: 1rem;
+				height: 1rem;
+				display: inline-grid;
+				place-content: center;
+				float: right;
+				content: "▾";
 			}
-			
-			/* &:has(:focus-visible) {
-				[role=tab]:not(:has(:checked)) {
-					box-shadow: none;
-				}
-				[role=tabpanel] {
-					border-color: transparent;
-				}
-			} */
-
-			[role=tab]:not(:has(:checked)) {
-				box-shadow: 0 2px 0 var(--_color-muted);
-			}
-
-			[role=tabpanel] {
-				grid-column: unset;
-				grid-row: unset;
-				margin-block-start: 1.5rem;
-				border-bottom: solid 2px var(--_color-muted);
-				box-shadow: none;
-				&:last-child {
-					border-bottom-color: transparent;
-				}
-				& > div {
-					border-top: solid 2px transparent;
-					border-top: solid 2px var(--_color-primary);
-				}
-			}
-
-			[role=tab]:has(:checked) + [role=tabpanel] {
+			&:has(:checked)::after {
+				/* content: "▿"; */
+				/* content: "▾"; */
+				/* content: ""; */
+				color: var(--_color-primary);
 			}
 		}
-	}
 
-	[role=tab] {
-		grid-row: 2;
-		width: max-content;
-	}
-	[role=tabpanel] {
-		grid-column: 1 / -1;
-		grid-row: 3;
-	}
-
-	/* tab logic */
-	[role=tab] {
-		&:has(:checked) {
-			pointer-events: none;
+		[role=tab]:has(:checked) {
+			/*padding-top: 1rem;*/
+			margin-bottom: -1.5rem;
+			/* box-shadow: 0 2px 0 transparent; */
+			box-shadow: none;
 			box-shadow: 0 3px 0 var(--_color-primary);
+			border: 0;
+			/* color: var(--_color-primary); */
 		}
-		&:not(:has(:checked)):hover {
-			cursor: pointer;
-			color: var(--_color-primary);
+		
+		[role=tab]:has(:focus-visible) {
+			outline-offset: -1px;
+			padding-inline: 0.5rem;
+			/* margin-block-start: -.5rem; */
+			background-color: #fff;
+			/* box-shadow: none; */
+			border-color: transparent;
+			color: inherit;
+		}
+		
+		/* &:has(:focus-visible) {
+			[role=tab]:not(:has(:checked)) {
+				box-shadow: none;
+			}
+			[role=tabpanel] {
+				border-color: transparent;
+			}
+		} */
+
+		[role=tab]:not(:has(:checked)) {
+			box-shadow: 0 2px 0 var(--_color-muted);
+		}
+
+		[role=tabpanel] {
+			grid-column: unset;
+			grid-row: unset;
+			margin-block-start: 1.5rem;
+			border-bottom: solid 2px var(--_color-muted);
+			box-shadow: none;
+			&:last-child {
+				border-bottom-color: transparent;
+			}
+			& > div {
+				border-top: solid 2px transparent;
+				border-top: solid 2px var(--_color-primary);
+			}
+		}
+
+		[role=tab]:has(:checked) + [role=tabpanel] {
 		}
 	}
-	[role=tab] + [role=tabpanel] {
-		/* display: grid; */
-		/* grid-template-rows: 0fr; */
-		/* padding: 0; */
-		/* padding-block-end: 1.5rem; */
+}
+
+[role=tab] {
+	grid-row: 2;
+	width: max-content;
+}
+[role=tabpanel] {
+	grid-column: 1 / -1;
+	grid-row: 3;
+}
+
+/* tab logic */
+[role=tab] {
+	&:has(:checked) {
 		pointer-events: none;
-		@supports not (view-transition-name: none) {
-			transition: grid-template-rows 600ms ease-out, opacity 300ms ease-in-out;
-		}
-		& > * {
-			overflow: hidden;
-		}
+		box-shadow: 0 3px 0 var(--_color-primary);
 	}
-	[role=tab]:has(:checked) + [role=tabpanel] {
-		grid-template-rows: 1fr;
-		pointer-events: unset;
-		& > * {
-			overflow: visible;
-		}
+	&:not(:has(:checked)):hover {
+		cursor: pointer;
+		color: var(--_color-primary);
 	}
-	[role=tab]:not(:has(:checked)) + [role=tabpanel] {
-		grid-template-rows: 0fr;
-		opacity: 0;
-		height: 0;
-		visibility: hidden;
-		/* .visually-hidden */
+}
+[role=tab] + [role=tabpanel] {
+	/* display: grid; */
+	/* grid-template-rows: 0fr; */
+	/* padding: 0; */
+	/* padding-block-end: 1.5rem; */
+	pointer-events: none;
+	@supports not (view-transition-name: none) {
+		transition: grid-template-rows 600ms ease-out, opacity 300ms ease-in-out;
+	}
+	& > * {
+		overflow: hidden;
+	}
+}
+[role=tab]:has(:checked) + [role=tabpanel] {
+	grid-template-rows: 1fr;
+	pointer-events: unset;
+	& > * {
+		overflow: visible;
+	}
+}
+[role=tab]:not(:has(:checked)) + [role=tabpanel] {
+	grid-template-rows: 0fr;
+	opacity: 0;
+	height: 0;
+	visibility: hidden;
+	/* .visually-hidden */
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+
+	@supports (view-transition-name: none) {
+		/* display: none; /* this breaks the transition animation */
+		/* ( ...which is okay because the classic transitions
+		are replaced by view-transitions when supported) */
+	}
+}
+
+/* base styles for tabs */
+[role=tab] {
+	/* from: https://www.trysmudford.com/blog/a-good-reset/ */
+	-webkit-appearance: none;
+	border-radius: 0;
+	text-align: inherit;
+	background: none;
+	box-shadow: none;
+	/* cursor: pointer; */
+	border: none;
+	color: inherit;
+	/* font: inherit; */
+	/**/
+	text-decoration: none;
+	font-weight: bold;
+	font-family: var(--_tab-font);
+	/**/
+	border-inline: solid 1.5px transparent;
+	padding: 0.25em 1em;
+	padding-block-start: 0.5em;
+	padding-block-end: 0.5rem;
+	margin-block-end: 0;
+	box-shadow: 0 3px 0 var(--_color-muted);
+	z-index: 1;
+	/**/
+
+	/* when :focus-visible (on keyboard navigation) */
+	&:has([type=radio]:focus-visible) {
+		outline: solid 1.5px var(--_color-primary);
+		outline-offset: -3px;
+		border-radius: 8px 8px 0 0;
+	}
+
+	/* visually hide radio inputs */
+	input[type=radio] {
 		clip: rect(0 0 0 0);
 		clip-path: inset(50%);
+		height: 1px;
 		overflow: hidden;
 		position: absolute;
 		white-space: nowrap;
-
-		@supports (view-transition-name: none) {
-			/* display: none; /* this breaks the transition animation */
-			/* ( ...which is okay because the classic transitions
-			are replaced by view-transitions when supported) */
-		}
+		width: 1px;
 	}
+}
 
-	/* base styles for tabs */
-	[role=tab] {
-		/* from: https://www.trysmudford.com/blog/a-good-reset/ */
-		-webkit-appearance: none;
-		border-radius: 0;
-		text-align: inherit;
-		background: none;
-		box-shadow: none;
-		/* cursor: pointer; */
-		border: none;
-		color: inherit;
-		/* font: inherit; */
-		/**/
-		text-decoration: none;
-		font-weight: bold;
-		font-family: var(--_tab-font);
-		/**/
-		border-inline: solid 1.5px transparent;
-		padding: 0.25em 1em;
-		padding-block-start: 0.5em;
-		padding-block-end: 0.5rem;
-		margin-block-end: 0;
-		box-shadow: 0 3px 0 var(--_color-muted);
-		z-index: 1;
-		/**/
-
-		/* when :focus-visible (on keyboard navigation) */
-		&:has([type=radio]:focus-visible) {
+/* tabpanel child elements */
+[role=tabpanel] {
+	& > *:first-child {
+		border-top: solid 3px var(--_color-muted);
+		/* margin: 0;
+		padding: 1em 0 0 0; */
+		margin-block-start: 0;
+		padding-block-start: 1rem;
+		&:focus-visible {
+			/* padding-block-start: .5rem; */
+			outline-offset: 0.25rem;
 			outline: solid 1.5px var(--_color-primary);
-			outline-offset: -3px;
-			border-radius: 8px 8px 0 0;
-		}
-
-		/* visually hide radio inputs */
-		input[type=radio] {
-			clip: rect(0 0 0 0);
-			clip-path: inset(50%);
-			height: 1px;
-			overflow: hidden;
-			position: absolute;
-			white-space: nowrap;
-			width: 1px;
-		}
-	}
-
-	/* tabpanel child elements */
-	[role=tabpanel] {
-		& > *:first-child {
-			border-top: solid 3px var(--_color-muted);
-			/* margin: 0;
-			padding: 1em 0 0 0; */
-			margin-block-start: 0;
-			padding-block-start: 1rem;
-			&:focus-visible {
-				/* padding-block-start: .5rem; */
-				outline-offset: 0.25rem;
-				outline: solid 1.5px var(--_color-primary);
-				/* border-radius: .5rem; */
-				/* z-index: 2; */
-			}
+			/* border-radius: .5rem; */
+			/* z-index: 2; */
 		}
 	}
 }

@@ -17,12 +17,11 @@ a {
         oklch(from var(--st-color) 50% c h),
         oklch(from var(--st-color) 85% 75% h)
     );
-    text-decoration: none;
     font-weight: bold;
-    opacity: .9;
+    text-decoration: none;
 
     &:hover {
-        opacity: 1;
+        text-decoration: underline;
     }
 }
 
@@ -45,7 +44,7 @@ h1 + p {
     font-size: 1.2em;
 }
 
-simple-tabs {
-    outline: 1px dashed var(--st-tabs-color);
+/* simple-tabs {
+    outline: 1px dashed var(--st-color);
     outline-offset: .33lh;
-}
+} */

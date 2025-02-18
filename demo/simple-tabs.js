@@ -14,7 +14,7 @@ class SimpleTabs extends HTMLElement {
     simpleTabs() {
 
         const accumulateNextElements = (limit = 0) => {
-            let resultArray = [];
+            let resultArray = [document.querySelector('body')];
             // const internalSelector = `${this.selector} *`;
             const internalSelector = `${this.selector} > * > *`;
             const internalCollection = this.shadowRoot.querySelectorAll(internalSelector);
@@ -67,13 +67,13 @@ class SimpleTabs extends HTMLElement {
         function addTransitionNames(arr) {
             arr.forEach((el, i) => {
                 if (el.style.viewTransitionName === '') {
-                    el.style.viewTransitionName = 'simpletabs-transition-' + i;
+                    el.style.viewTransitionName = 'simple-tabs-transition-' + i;
                 }
             });
         }
         function removeTransitionNames(arr) {
             arr.forEach((el, i) => {
-                if (el.style.viewTransitionName.startsWith('simpletabs-transition-')) {
+                if (el.style.viewTransitionName.startsWith('simple-tabs-transition-')) {
                     el.style.viewTransitionName = '';
                 }
             });
