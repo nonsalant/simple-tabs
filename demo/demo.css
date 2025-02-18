@@ -26,7 +26,7 @@ a {
 }
 
 main {
-    max-width: min(100%, 60ch);
+    max-width: min(100%, 39rem);
     margin-inline: auto;
     padding: 1.5lh;
 }
