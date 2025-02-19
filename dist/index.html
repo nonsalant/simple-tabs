@@ -3,84 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Tabs</title>
-    <link rel="stylesheet" href="./demo.css"> 
-    
+    <title>Simple Tabs Web Component</title>
+    <link rel="stylesheet" href="./demo.css">
+
     <!-- Simple Tabs Script -->
     <script src="./simple-tabs.js" type="module"></script>
+
 </head>
 <body>
-    <main>
+<main>
+    <h1><strong>Tabs</strong> that change into an <strong>Accordion</strong> in small spaces</h1>
+    <p>Keyboard accessible tabs Web Component that animates the part below it when changing tabs. Changes to Accordion in narrow spaces.</p>
 
-        <h1><strong>Tabs</strong> that change into an <strong>Accordion</strong> in small spaces</h1>
-    
-        <p>Keyboard accessible tabs Web Component that animates the part below it when changing tabs. Changes to Accordion
-            in narrow spaces.</p>
-    
-        <!-- https://w3c.github.io/aria/#tabpanel -->
-        <!-- Authors should associate a tabpanel element with its tab, 
-    		either by using the aria-controls attribute on the tab to reference the tab panel, 
-    		or by using the aria-labelledby attribute on the tab panel to reference the tab. -->
-    
-        <simple-tabs>
-            <template shadowrootmode="open">
-                <!-- Scoped Style Sheet -->
-                <link rel="stylesheet" href="./simple-tabs.css">
-    
-                <div class="simple-tabs" role="tabs">
-    
-                    <label role="tab" id="tab-1"><input type="radio" name="tabs" checked>First Tab</label>
-                    <div role="tabpanel" aria-labelledby="tab-1">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum possimus, dolore accusamus
-                            magnam quas numquam hic voluptatibus assumenda at soluta fuga cupiditate aperiam sed consequatur
-                            molestias porro sunt corporis. Molestiae!</p>
-                        <p>Tempora facilis aperiam consequuntur quia doloremque voluptatibus distinctio non id fugiat sed
-                            earum fuga architecto temporibus inventore expedita beatae laboriosam, repellendus sit deleniti
-                            quasi. Beatae error corporis magni aperiam recusandae.</p>
-                    </div><!-- [role=tabpanel] -->
-    
-                    <label role="tab" id="tab-2"><input type="radio" name="tabs">Second Tab</label>
-                    <div role="tabpanel" aria-labelledby="tab-2">
-                        <p>Tempora facilis aperiam consequuntur quia doloremque voluptatibus distinctio non id fugiat sed
-                            earum fuga architecto temporibus inventore expedita beatae laboriosam, repellendus sit deleniti
-                            quasi. Beatae error corporis magni aperiam recusandae.</p>
-                    </div><!-- [role=tabpanel] -->
-    
-                    <label role="tab" id="tab-3"><input type="radio" name="tabs">Third Tab</label>
-                    <div role="tabpanel" aria-labelledby="tab-3">
-                        <p>Tempora facilis aperiam consequuntur quia doloremque.</p>
-                    </div><!-- [role=tabpanel] -->
-    
-                </div><!-- /.simple-tabs -->
-            </template>
-        </simple-tabs>
+    <!-- https://w3c.github.io/aria/#tabpanel -->
+    <!-- Authors should associate a tabpanel element with its tab, 
+            either by using the aria-controls attribute on the tab to reference the tab panel, 
+            or by using the aria-labelledby attribute on the tab panel to reference the tab. -->
+    <simple-tabs>
+        <template shadowrootmode="open">
+            <!-- Scoped Style Sheet -->
+            <link rel="stylesheet" href="./simple-tabs.css">
 
-    
-        <h2>Uses:</h2>
-        <ul>
-            <li><strong>Container Queries</strong> to change between tabs and accordion at 600px.</li>
-            <li><strong>View Transitions</strong> to animate elements that follow the tabs in the DOM.</li>
-            <li><strong>Declarative Shadow DOM</strong> to isolate the tab styles.</li>
-        </ul>
-    
-        <hr>
-    
-        <h2>Notes:</h2>
-        <ul>
-            <li>Keyboard accessible: the <kbd>←</kbd> and <kbd>→</kbd> keys (as well as <kbd>↑</kbd>/<kbd>↓</kbd>) can be used after keyboard-navigating into the tabs.</li>
-            <li>JavaScript is only used to add the <code>view-transition-name</code>'s that enable the View Transitions.</li>
-            <li>The Declarative Shadow DOM, particularly <b>the isolated CSS inside the component's
-                    <code>&lt;template&gt;</code>, works without JavaScript</b>.</li>
-        </ul>
-    
-        <hr>
-    
-        <h2><code>&lt;simple-tabs&gt;</code></h2>
-    	<p>Declarative Shadow DOM Web Component</p>
-        <p>
-            View on <a href="https://codepen.io/nonsalant/pen/JojYLGQ">CodePen</a>.
-            View on <a href="https://github.com/nonsalant/simple-tabs">GitHub</a>.
-        </p>
-    </main>
+            <div class="simple-tabs" role="tabs">
+
+                <label role="tab" id="tab-1"><input type="radio" name="tabs" checked>First Tab</label>
+                <div role="tabpanel" aria-labelledby="tab-1">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum possimus, dolore accusamus magnam quas numquam hic voluptatibus assumenda at soluta fuga cupiditate aperiam sed consequatur molestias porro sunt corporis. Molestiae!</p>
+                    <p>Tempora facilis aperiam consequuntur quia doloremque voluptatibus distinctio non id fugiat sed earum fuga architecto temporibus inventore expedita beatae laboriosam, repellendus sit deleniti quasi. Beatae error corporis magni aperiam recusandae.</p>
+                </div><!-- [role=tabpanel] -->
+
+                <label role="tab" id="tab-2"><input type="radio" name="tabs">Second Tab</label>
+                <div role="tabpanel" aria-labelledby="tab-2">
+                    <p>Blandit facilisis finibus quam orci tellus. Nunc urna in lacinia condimentum curabitur morbi. Nibh tristique dolor gravida justo ultricies; habitant hac pulvinar taciti.</p>
+                </div><!-- [role=tabpanel] -->
+
+                <label role="tab" id="tab-3"><input type="radio" name="tabs">Third Tab</label>
+                <div role="tabpanel" aria-labelledby="tab-3">
+                    <p>Ac nec semper maecenas rhoncus ligula mi facilisis. Massa dui dis consequat euismod donec mi nisl maecenas. Ipsum sed volutpat feugiat efficitur finibus efficitur. Lacus aliquet at proin condimentum cursus mi. Condimentum orci ipsum euismod dui feugiat curabitur faucibus feugiat. Ad facilisi ridiculus, ultrices at erat ultricies.</p>
+                </div><!-- [role=tabpanel] -->
+
+            </div><!-- /.simple-tabs -->
+        </template>
+    </simple-tabs>
+
+    <h2>Uses:</h2>
+    <ul>
+        <li><strong>Container Queries</strong> to change between tabs and accordion at 600px.</li>
+        <li><strong>View Transitions</strong> to animate elements that follow the tabs in the DOM.</li>
+        <li><strong>Declarative Shadow DOM</strong> to isolate the tab styles.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Notes:</h2>
+    <ul>
+        <li>Keyboard accessible: the <kbd>←</kbd> and <kbd>→</kbd> keys (as well as <kbd>↑</kbd>/<kbd>↓</kbd>) can be used after keyboard-navigating into the tabs.</li>
+        <li>JavaScript is only used to add the <code>view-transition-name</code>'s that enable the View Transitions.</li>
+        <li>The Declarative Shadow DOM, particularly <b>the isolated CSS inside the component's <code>&lt;template&gt;</code>, works without JavaScript</b>.</li>
+    </ul>
+
+    <hr>
+
+    <h2><code>&lt;simple-tabs&gt;</code></h2>
+    <p>Declarative Shadow DOM Web Component</p>
+    <p>
+        View on <a href="https://codepen.io/nonsalant/pen/JojYLGQ">CodePen</a>.
+        View on <a href="https://github.com/nonsalant/simple-tabs">GitHub</a>.
+    </p>
+</main>
 </body>
 </html>

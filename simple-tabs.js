@@ -17,28 +17,26 @@ class SimpleTabs extends HTMLElement {
             const internalSelector = `${this.selector}, ${this.selector} > *`;
             const internalCollection = this.shadowRoot.querySelectorAll(internalSelector);
             const internalElements = Array.from(internalCollection);
-            // console.log(internalCollection)
             
-            let resultArray = [document.querySelector('body')];
             let currentEl = this;
-
+            let resultArr = [document.querySelector('body')];
             // Recursively accumulate elements that follow in the DOM and are not hidden
             while (currentEl.parentNode && currentEl.parentNode.tagName !== 'HTML') {
                 const parent = currentEl.parentNode;
                 let siblings = Array.from(parent.children).filter(el => !isHidden(el));
                 siblings = siblings.slice(siblings.indexOf(currentEl) + 1);
-                resultArray = [...resultArray, ...siblings];
+                resultArr = [...resultArr, ...siblings];
 
                 // Apply the limit if it's reached
-                if (limit > 0 && limit < resultArray.length) {
-                    resultArray = resultArray.slice(0, limit);
+                if (limit > 0 && limit < resultArr.length) {
+                    resultArr = resultArr.slice(0, limit);
                     break;
                 }
 
                 currentEl = currentEl.parentNode;
             }
 
-            return [...internalElements, ...resultArray];
+            return [...internalElements, ...resultArr];
         }
 
         // Enable view transitions if supported
