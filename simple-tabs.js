@@ -14,9 +14,8 @@ class SimpleTabs extends HTMLElement {
     enableViewTransitions() {
 
         const accumulateNextElements = (limit = 0) => {
-            let resultArray = [document.querySelector('body')];
-            // const internalSelector = `${this.selector} *`;
-            const internalSelector = `${this.selector} > * > *`;
+            let resultArray = [];
+            const internalSelector = `${this.selector}, ${this.selector} > *`;
             const internalCollection = this.shadowRoot.querySelectorAll(internalSelector);
             const internalElements = Array.from(internalCollection);
             // console.log(internalCollection)
