@@ -14,12 +14,12 @@ class SimpleTabs extends HTMLElement {
     enableViewTransitions() {
 
         const accumulateNextElements = (limit = 0) => {
-            let resultArray = [];
             const internalSelector = `${this.selector}, ${this.selector} > *`;
             const internalCollection = this.shadowRoot.querySelectorAll(internalSelector);
             const internalElements = Array.from(internalCollection);
             // console.log(internalCollection)
-
+            
+            let resultArray = [document.querySelector('body')];
             let currentEl = this;
 
             // Recursively accumulate elements that follow in the DOM and are not hidden
