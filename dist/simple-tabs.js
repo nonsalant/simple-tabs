@@ -7,11 +7,11 @@ class SimpleTabs extends HTMLElement {
 
     connectedCallback() {
         setTimeout(() => {
-            this.enableViewTransitions();
+            this.#enableViewTransitions();
         });
     }
 
-    enableViewTransitions() {
+    #enableViewTransitions() {
 
         const accumulateNextElements = (limit = 0) => {
             const internalSelector = `${this.selector}, ${this.selector} > *`;
