@@ -1,16 +1,10 @@
 :root {
-    --st-color: #003366; /* darkblue */ /* #003366 */
-    --st-tab-font: system-ui;
-    --st-max-tabs: 10;
-
     color-scheme: light dark;
     font-family: system-ui;
     text-wrap: pretty;
 }
 
-body {
-    margin: 0;
-}
+body { margin: 0 }
 
 a {
     color: light-dark(
@@ -20,9 +14,7 @@ a {
     font-weight: bold;
     text-decoration: none;
 
-    &:hover {
-        text-decoration: underline;
-    }
+    &:hover { text-decoration: underline; }
 }
 
 main {
@@ -34,9 +26,7 @@ main {
 h1 {
     font-weight: normal;
 
-    strong {
-        font-family: Georgia;
-    }
+    strong { font-family: Georgia; }
 }
 
 h1 + p {
@@ -67,7 +57,30 @@ kbd:not(:has(kbd)) {
     translate: 0 -1.5px;
 }
 
+/*  */
 /* simple-tabs {
     outline: 1px dashed var(--st-color);
     outline-offset: .33lh;
 } */
+
+/* #color-picker */
+label:has(>[type=color]) {
+    display: flex;
+    gap: .5lh;
+    align-items: center;
+    cursor: pointer;
+    margin-block-end: 1lh;
+}
+[type=color] {
+    border-radius: 50%;
+    inline-size: 2em;
+    block-size: 2em;
+    cursor: pointer;
+    padding: 0px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(220,220,220);
+}
+[type=color]::-webkit-color-swatch-wrapper { padding: 0px; }
+[type=color]::-webkit-color-swatch { border-radius: 50%; }
+[type="color"]::-moz-color-swatch { border-radius: 50%; }

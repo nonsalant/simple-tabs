@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Tabs Web Component</title>
     <link rel="stylesheet" href="./demo.css">
+    <script src="./color-picker.js" defer></script>
 
+    <!-- Simple Tabs CSS Vars -->
+    <style>
+    :root {
+        --st-color: #003366; /* darkblue */
+        --st-tab-font: system-ui;
+    }
+    </style>
     <!-- Simple Tabs Script -->
     <script src="../simple-tabs.js"></script>
 
@@ -16,9 +24,7 @@
     <p>Keyboard accessible tabs Web Component that animates the part below it when changing tabs. Changes to Accordion in narrow spaces.</p>
 
     <!-- https://w3c.github.io/aria/#tabpanel -->
-    <!-- Authors should associate a tabpanel element with its tab, 
-            either by using the aria-controls attribute on the tab to reference the tab panel, 
-            or by using the aria-labelledby attribute on the tab panel to reference the tab. -->
+    <!-- Associate a tab panel with its tab by using the `aria-labelledby` attribute. -->
     <simple-tabs>
         <template shadowrootmode="open">
             <!-- Scoped Style Sheet -->
@@ -47,23 +53,12 @@
     </simple-tabs>
 
     <h2>⚙️ Options</h2>
-    <style>
-		label:has(>[type=color]) {display:flex; gap:.5lh; align-items:center; cursor:pointer;}
-		[type=color] {border-radius:50%; inline-size:2em; block-size:2em; cursor: pointer; padding:0px; border-width:3px; border-style:solid; border-color:rgb(220,220,220);}
-		[type=color]::-webkit-color-swatch-wrapper {padding:0px;} [type=color]::-webkit-color-swatch {border-radius:50%;} input[type="color"]::-moz-color-swatch {border-radius:50%;}
-	</style>
-	<script>
-    setTimeout(() => {
-        const picker=document.querySelector('input[type=color]'); 
-        const initialColor = getComputedStyle(document.documentElement).getPropertyValue('--st-color').trim();
-        if (initialColor.startsWith('#')) picker.value=initialColor; else picker.value='#003366';//darkblue
-        picker.addEventListener('input', function(){document.documentElement.style.setProperty('--st-color',this.value);});
-    });
-	</script>
 	<label for="color-picker">
 		<input type="color" id="color-picker" value="#05267b">
 		<b>Tab Color (<code>--st-color</code>)</b>
 	</label>
+
+    <hr>
 
     <h2>Uses:</h2>
     <ul>
