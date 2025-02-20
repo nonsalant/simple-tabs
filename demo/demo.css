@@ -34,6 +34,12 @@ h1 + p {
     font-size: 1.2em;
 }
 
+h2 { 
+    font-family: Georgia; 
+    font-weight: normal; 
+    &:not(:has(code:first-child)) { font-size:1.75em; }
+}
+
 hr {
     opacity: .33;
 }
