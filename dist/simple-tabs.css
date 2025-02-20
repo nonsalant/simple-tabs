@@ -1,4 +1,4 @@
-/* Scoped Style Sheet */
+/* Scoped Style Sheet (loaded inside the Web Component's <template>)  */
 
 :host {
 	--_color: var(--st-color, #0000ff);
@@ -62,24 +62,12 @@
 [role=tabpanel] {
 	grid-row: 2;
 	grid-column: 1 / -1;
-	transition: opacity 600ms ease-in-out;
+	transition: opacity 300ms ease-in-out;
 	
-	&:where([role=tab]:has(:checked) + *) {
-		pointer-events: unset;
-	}
-	&:where([role=tab]:not(:has(:checked)) + *) {
-		pointer-events: none;
-		opacity: 0;
-		height: 0;
-		visibility: hidden;
-		clip: rect(0 0 0 0);
-		clip-path: inset(50%);
-		overflow: clip;
-		position: absolute;
-		white-space: nowrap;
-	}
+	&:where([role=tab]:has(:checked) + *) { pointer-events: unset; }
+	&:where([role=tab]:not(:has(:checked)) + *) { display: none; }
 
-	& > *:first-child {
+	& > :first-child {
 		margin-block-start: 0;
 		border-top: solid 3px var(--_color-muted);
 		padding-block-start: 1rem;
