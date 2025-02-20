@@ -82,9 +82,8 @@ You can override the default values for certain properties from your global CSS.
 
 ```css
 :root {
-    --st-tabs-color: red;
+    --st-tabs-color: #ff0000; /* red */
     --st-tab-font: system-ui;
-    --st-max-tabs: 10;
 }
 
 ```
