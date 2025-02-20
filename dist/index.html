@@ -20,8 +20,10 @@
 </head>
 <body>
 <main>
-    <h1><strong>Tabs</strong> that change into an <strong>Accordion</strong> in small spaces</h1>
-    <p>Keyboard accessible tabs Web Component that animates the part below it when changing tabs. Changes to Accordion in narrow spaces.</p>
+    <header>
+        <h1><strong>Tabs</strong> that change into an <strong>Accordion</strong> in small spaces</h1>
+        <p>Keyboard accessible tabs Web Component that animates the part below it when changing tabs. Changes to Accordion in narrow spaces.</p>
+    </header>
 
     <!-- https://w3c.github.io/aria/#tabpanel -->
     <!-- Associate a tab panel with its tab by using the `aria-labelledby` attribute. -->
@@ -52,38 +54,40 @@
         </template>
     </simple-tabs>
 
-    <h2>⚙️ Options</h2>
-    <label for="color-picker">
-		<input type="color" id="color-picker" value="#05267b">
-		<b>Tab Color (<code>--st-color</code>)</b>
-	</label>
-
-    <hr>
-
-    <h2>Uses:</h2>
-    <ul>
-        <li><strong>Container Queries</strong> to change between tabs and accordion at 600px.</li>
-        <li><strong>View Transitions</strong> to animate elements that follow the tabs in the DOM.</li>
-        <li><strong>Declarative Shadow DOM</strong> to isolate the tab styles.</li>
-    </ul>
-
-    <hr>
-
-    <h2>Notes:</h2>
-    <ul>
-        <li>Keyboard accessible: the <kbd>←</kbd> and <kbd>→</kbd> keys (as well as <kbd>↑</kbd>/<kbd>↓</kbd>) can be used after keyboard-navigating into the tabs.</li>
-        <li>JavaScript is only used to add the <code>view-transition-name</code>'s that enable the View Transitions.</li>
-        <li>The Declarative Shadow DOM, particularly <b>the isolated CSS inside the component's <code>&lt;template&gt;</code>, works without JavaScript</b>.</li>
-    </ul>
-
-    <hr>
-
-    <h2><code>&lt;simple-tabs&gt;</code></h2>
-    <p>Declarative Shadow DOM Web Component</p>
-    <p>
-        View on <a href="https://codepen.io/nonsalant/pen/JojYLGQ">CodePen</a>.
-        View on <a href="https://github.com/nonsalant/simple-tabs">GitHub</a>.
-    </p>
+    <footer>
+        <h2>⚙️ Options</h2>
+        <label for="color-picker">
+            <input type="color" id="color-picker" value="#05267b">
+            <b>Tab Color (<code>--st-color</code>)</b>
+        </label>
+        
+        <hr>
+        
+        <h2>Uses:</h2>
+        <ul>
+            <li><strong>Container Queries</strong> to change between tabs and accordion at 600px.</li>
+            <li><strong>View Transitions</strong> to animate elements that follow the tabs in the DOM.</li>
+            <li><strong>Declarative Shadow DOM</strong> to isolate the tab styles.</li>
+        </ul>
+        
+        <hr>
+        
+        <h2>Notes:</h2>
+        <ul>
+            <li>Keyboard accessible: the <kbd>←</kbd> and <kbd>→</kbd> keys (as well as <kbd>↑</kbd>/<kbd>↓</kbd>) can be used after keyboard-navigating into the tabs.</li>
+            <li>JavaScript is only used to add the <code>view-transition-name</code>'s that enable the View Transitions.</li>
+            <li>The Declarative Shadow DOM, particularly <b>the isolated CSS inside the component's <code>&lt;template&gt;</code>, works without JavaScript</b>.</li>
+        </ul>
+        
+        <hr>
+        
+        <h2><code>&lt;simple-tabs&gt;</code></h2>
+        <p>Declarative Shadow DOM Web Component</p>
+        <p>
+            View on <a href="https://codepen.io/nonsalant/pen/JojYLGQ">CodePen</a>.
+            View on <a href="https://github.com/nonsalant/simple-tabs">GitHub</a>.
+        </p>
+    </footer>
 </main>
 </body>
 </html>
