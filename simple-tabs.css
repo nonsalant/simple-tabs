@@ -1,7 +1,7 @@
 /* Scoped Style Sheet */
 
 :host {
-	--_color: var(--st-color, blue);
+	--_color: var(--st-color, #0000ff);
 	--_tab-font: var(--st-tab-font, system-ui);
 	--_max-tabs: var(--st-max-tabs, 10);
 

@@ -46,6 +46,18 @@
         </template>
     </simple-tabs>
 
+    <style> label:has(>[type=color]) { display:flex; gap:.5lh; align-items:center; cursor:pointer; } </style>
+	<h2>⚙️ Options</h2>
+	<label>
+		<input type="color" id="colorPicker" value="#05267b">
+		<b>Tab Color (<code>--st-color</code>)</b>
+	</label>
+	<script type="module">const picker=document.querySelector('input[type=color]'); 
+		const initialColor = getComputedStyle(document.documentElement).getPropertyValue('--st-color').trim();
+		if (initialColor.startsWith('#')) colorPicker.value=initialColor; else picker.value='#003366';//darkblue
+		picker.addEventListener('input', function(){document.documentElement.style.setProperty('--st-color',this.value);});
+	</script>
+
     <h2>Uses:</h2>
     <ul>
         <li><strong>Container Queries</strong> to change between tabs and accordion at 600px.</li>

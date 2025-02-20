@@ -1,5 +1,5 @@
 :root {
-    --st-color: red;
+    --st-color: #003366; /* darkblue */ /* #003366 */
     --st-tab-font: system-ui;
     --st-max-tabs: 10;
 
