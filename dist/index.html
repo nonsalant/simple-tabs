@@ -46,15 +46,18 @@
         </template>
     </simple-tabs>
 
-    <style> label:has(>[type=color]) { display:flex; gap:.5lh; align-items:center; cursor:pointer; } </style>
+    <style>label:has(>[type=color]) {display:flex; gap:.5lh; align-items:center; cursor:pointer;}
+		[type=color] {border-radius:50%; inline-size:2em; block-size:2em; cursor: pointer; padding:0px; border-width:3px; border-style:solid; border-color:rgb(220,220,220);}
+		[type=color]::-webkit-color-swatch-wrapper {padding:0px;} [type=color]::-webkit-color-swatch {border-radius:50%;} input[type="color"]::-moz-color-swatch {border-radius:50%;}
+	</style>
 	<h2>⚙️ Options</h2>
-	<label>
-		<input type="color" id="colorPicker" value="#05267b">
+	<label for="color-picker">
+		<input type="color" id="color-picker" value="#05267b">
 		<b>Tab Color (<code>--st-color</code>)</b>
 	</label>
-	<script type="module">const picker=document.querySelector('input[type=color]'); 
+	<script defer>const picker=document.querySelector('input[type=color]'); 
 		const initialColor = getComputedStyle(document.documentElement).getPropertyValue('--st-color').trim();
-		if (initialColor.startsWith('#')) colorPicker.value=initialColor; else picker.value='#003366';//darkblue
+		if (initialColor.startsWith('#')) picker.value=initialColor; else picker.value='#003366';//darkblue
 		picker.addEventListener('input', function(){document.documentElement.style.setProperty('--st-color',this.value);});
 	</script>
 
