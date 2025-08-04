@@ -12,7 +12,35 @@ JavaScript is used to enable View Transitions that animate the the page when the
 
 ## 2. Scripts and Styles
 
-### 2.1. Script
+### 2.1. From a CDN
+Demo using a CDN: https://codepen.io/nonsalant/pen/ogjWXjK/9a18cfdc8de22b8101198fe415af974b
+
+#### 2.1.1. Script
+- Load the script:
+```html
+<script src="https://unpkg.com/simple-tabs-component/simple-tabs.js"></script>
+```
+- *Or* load it as a module:
+```html
+<script src="https://unpkg.com/simple-tabs-component/simple-tabs.js" type="module"></script>
+```
+
+#### 2.1.2. Styles
+- Load the Scoped Stylesheet inside the component markup:
+```html
+<simple-tabs>
+    <template shadowrootmode="open">
+        <!-- Scoped Stylesheet -->
+        <link rel="stylesheet" href="https://unpkg.com/simple-tabs-component/simple-tabs.css">
+        <!-- ... -->
+    </template>
+</simple-tabs>
+```
+
+### 2.2. From local files
+You can also download the 2 files (`simple-tabs.js` and `simple-tabs.css`) and use them locally.
+
+#### 2.2.1. Script
 - Load the scrip. Adjust the path as needed:
 ```html
 <script src="./simple-tabs.js"></script>
@@ -22,8 +50,8 @@ JavaScript is used to enable View Transitions that animate the the page when the
 <script src="./simple-tabs.js" type="module"></script>
 ```
 
-### 2.2. Styles
-- Adjust the URL of the Scoped Style Sheet to the correct path:
+#### 2.2.2. Styles
+- Load the Scoped Stylesheet inside the component markup and adjust its URL to the correct path:
 ```html
 <simple-tabs>
     <template shadowrootmode="open">

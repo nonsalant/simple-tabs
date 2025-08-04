@@ -1,0 +1,22 @@
+{
+    "name": "simple-tabs-component",
+    "version": "1.0.0",
+    "description": "Keyboard accessible Tabs Web Component that changes to an Accordion in small spaces.",
+    "main": "simple-tabs.js",
+    "keywords": [
+        "web-component",
+        "tabs",
+        "accessible",
+        "ui",
+        "accordion"
+    ],
+    "author": "Stefan Matei (https://stefanmatei.com)",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nonsalant/simple-tabs.git"
+    },
+    "bugs": {
+        "url": "https://github.com/nonsalant/simple-tabs/issues"
+    },
+    "homepage": "https://github.com/nonsalant/simple-tabs#readme"
+}
