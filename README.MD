@@ -125,7 +125,7 @@ You can override the default values for certain properties from your global CSS.
 
 ### 6.2. Features:
 <ul>
-    <li>Arrow keys for navigation: after reaching the tablist via <kbd>Tab</kbd>, use <kbd>←</kbd>/<kbd>→</kbd> (or <kbd>↑</kbd>/<kbd>↓</kbd>) to switch tabs.</li>
+    <li>Arrow keys for navigation: after reaching the first tab element via <kbd>Tab</kbd>, use <kbd>←</kbd>/<kbd>→</kbd> (or <kbd>↑</kbd>/<kbd>↓</kbd>) to switch tabs.</li>
     <li>JavaScript is only used to add the <code>view-transition-name</code>'s that enable the View Transitions.</li>
     <li>The Declarative Shadow DOM, particularly <b>the isolated CSS inside the component's <code>&lt;template&gt;</code>, works without JavaScript</b>.</li>
 </ul>
