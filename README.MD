@@ -1,6 +1,6 @@
 # Simple Tabs
 
-Keyboard accessible **Tabs** Web Component that changes to an **Accordion** in small spaces.
+Keyboard-navigable **Tabs** Web Component that changes to an **Accordion** in small spaces.
 
 ![Preview of 3 horizontal tabs with the first one being active and showing 2 paragraphs of dummy text as content below. A subtle horizontal line separates the tabs from the contents of the active tab. The segment of the line below the active tab is in a brighter color.](./dist/preview.png)
 
@@ -125,7 +125,7 @@ You can override the default values for certain properties from your global CSS.
 
 ### 6.2. Features:
 <ul>
-    <li>Keyboard accessible: the <kbd>←</kbd> and <kbd>→</kbd> keys (as well as <kbd>↑</kbd>/<kbd>↓</kbd>) can be used after keyboard-navigating into the tabs.</li>
+    <li>Arrow keys for navigation: after reaching the tablist via <kbd>Tab</kbd>, use <kbd>←</kbd>/<kbd>→</kbd> (or <kbd>↑</kbd>/<kbd>↓</kbd>) to switch tabs.</li>
     <li>JavaScript is only used to add the <code>view-transition-name</code>'s that enable the View Transitions.</li>
     <li>The Declarative Shadow DOM, particularly <b>the isolated CSS inside the component's <code>&lt;template&gt;</code>, works without JavaScript</b>.</li>
 </ul>
