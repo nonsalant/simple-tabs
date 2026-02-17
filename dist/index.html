@@ -22,7 +22,7 @@
 <main>
     <header>
         <h1><strong>Tabs</strong> that change into an <strong>Accordion</strong> in small spaces</h1>
-        <p>Keyboard accessible tabs Web Component that animates the part below it when changing tabs. Changes to Accordion in narrow spaces.</p>
+        <p>Keyboard-navigable tabs Web Component that animates the part below it when changing tabs. Changes to Accordion in narrow spaces.</p>
     </header>
 
     <!-- https://w3c.github.io/aria/#tabpanel -->
@@ -74,8 +74,8 @@
         
         <h3>Notes:</h3>
         <ul>
-            <li>Keyboard accessible: the <kbd>←</kbd> and <kbd>→</kbd> keys (as well as <kbd>↑</kbd>/<kbd>↓</kbd>) can be used after keyboard-navigating into the tabs.</li>
-            <li>JavaScript is only used to add the <code>view-transition-name</code>'s that enable the View Transitions.</li>
+            <li>Arrow keys for navigation: after reaching the first tab element via <kbd>Tab</kbd>, use <kbd>←</kbd>/<kbd>→</kbd> (or <kbd>↑</kbd>/<kbd>↓</kbd>) to switch tabs.</li>
+			<li>JavaScript is only used to add the <code>view-transition-name</code>'s that enable the View Transitions.</li>
             <li>The Declarative Shadow DOM, particularly <b>the isolated CSS inside the component's <code>&lt;template&gt;</code>, works without JavaScript</b>.</li>
         </ul>
         
