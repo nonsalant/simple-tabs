@@ -1,7 +1,7 @@
 class SimpleTabs extends HTMLElement {
     constructor() {
         super();
-        this.selector = '[role=tabs]';
+        this.selector = '.simple-tabs';
         this.maxElementsToAnimate = 20;
     }
 
